@@ -305,7 +305,8 @@ hr.line {
   }
 
   button {
-    padding: 16px 10px;
+    font-size: 13px;
+    padding: 16px 8px;
   }
 }
 
