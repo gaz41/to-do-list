@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To do list</title>
+  </head>
+  <body>
+    <div class="container">
+      <head>
+        <div class="header">
+          <h1>To Do List</h1>
+          <h3>
+            Record tasks you need to complete or things you want to&nbsp;do
+          </h3>
+        </div>
+      </head>
+
+      <main>
+        <div class="todo-app">
+          <h2>To do list</h2>
+          <div class="input-container">
+            <input type="text" id="input-box" placeholder="Add a to do" />
+            <button id="addBtn">Add</button>
+          </div>
+
+          <ul id="list-container"></ul>
+          <div id="empty-input-msg"></div>
+
+          <div class="tasks-reset-container">
+            <div class="tasks-reset">
+              <!-- TASKS COMPLETED -->
+              <div id="task-count"></div>
+              <!-- RESET -->
+              <hr class="line" />
+              <div id="reset" class="reset">reset</div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- COPYRIGHT NOTICE -->
+      <footer>
+        <div id="copy" class="copy"></div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

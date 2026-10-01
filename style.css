@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --font1: "Roboto", sans-serif;
+  --bgColor: linear-gradient(to right, #8ebea3 0%, #c7dbcb 100%);
+  --letterSpacing: 0.7px;
+  --boxShadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+  --color1: #ffffff;
+  --color2: #f9f9f9;
+  --color3: #c0c0c0;
+  --color4: #d9e4de;
+  --color5: #c7dbcb;
+  --color6: #aad1bb;
+  --color7: #a8c2ad;
+  --color8: #87a38d;
+  --color9: #e8eee8;
+  --color10: #303030;
+  --color11: #008000;
+  --color12: #2f4f4f;
+  --color13: #791f1f;
+  --color14: #8b0000;
+  --color15: #000000;
+
+  --copyColor1: #404040;
+  --copyColor2: #666666;
+  --copyColor3: #808080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font1);
+  background: var(--bgColor);
+  letter-spacing: var(--letterSpacing);
+  overflow-y: scroll;
+}
+
+.container {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  place-content: center;
+  padding: 20px;
+}
+
+.header {
+  max-width: 540px;
+}
+
+h1 {
+  color: var(--tempConvColor1);
+  font-size: 30px;
+  font-weight: 500;
+  margin: 30px 0 10px 10px;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 540px;
+  min-height: 600px;
+  background: var(--color1);
+  margin: 40px 0 20px 0;
+  padding: 40px 20px 20px 20px;
+  border-radius: 10px;
+  box-shadow: var(--boxShadow);
+}
+
+.todo-app h2 {
+  color: var(--color12);
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  margin: 0 0 14px 10px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color1);
+  letter-spacing: var(--letterSpacing);
+  margin-bottom: 25px;
+  border: 3px solid var(--color12);
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  letter-spacing: var(--letterSpacing);
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+button {
+  background: var(--color12);
+  color: var(--color2);
+  font-family: var(--font1);
+  font-size: 14px;
+  padding: 16px 26px;
+  letter-spacing: var(--letterSpacing);
+  border: none;
+  outline: none;
+  transition: 0.4s ease-in-out;
+}
+
+button:hover {
+  color: var(--color6);
+  box-shadow: var(--boxShadow);
+  cursor: pointer;
+}
+
+ul {
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  font-size: 16px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  outline: 1px solid rgba(47, 79, 79, 0.3);
+  background-color: var(--color9);
+  color: var(--color15);
+  padding-right: 75px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  background-image: url(images/uncheck.png);
+  background-size: cover;
+  background-position: center;
+  top: 7px;
+  left: 7px;
+}
+
+ul li.checked {
+  background-color: var(--color4);
+  color: var(--color12);
+  text-decoration: line-through;
+  text-decoration-color: var(--color13);
+  text-decoration-thickness: 2px;
+}
+
+li {
+  background-color: var(--color9);
+  margin-bottom: 10px;
+}
+
+ul li.checked::before {
+  background-image: url(images/check.png);
+}
+
+ul li span {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  width: 30px;
+  height: 30px;
+  font-size: 22px;
+  line-height: 30px;
+  text-align: center;
+}
+
+ul li span:hover {
+  outline: 2px solid var(--color12);
+  border-radius: 4px;
+}
+
+.edit-btn {
+  margin-right: 40px;
+  color: var(--color12);
+}
+
+.edit-btn:hover {
+  color: var(--color11);
+}
+
+.delete-btn {
+  margin-right: 6px;
+  color: var(--color12);
+}
+
+.delete-btn:hover {
+  color: var(--color14);
+}
+
+.tasks-reset-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+#task-count {
+  color: var(--color10);
+  font-size: 14px;
+  margin: 40px auto 4px;
+}
+
+hr.line {
+  border: none;
+  border-top: 1px solid var(--color3);
+}
+
+.taskText {
+  color: var(--color12);
+  font-size: 16px;
+}
+
+.reset {
+  background-color: var(--color12);
+  color: var(--color2);
+  font-size: 14px;
+  width: fit-content;
+  letter-spacing: var(--letterSpacing);
+  padding: 8px 12px;
+  float: right;
+  margin-top: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.reset:hover {
+  color: var(--color6);
+  box-shadow: var(--boxShadow);
+}
+
+#empty-input-msg {
+  color: var(--color11);
+  margin: 24px 0;
+}
+
+.copy {
+  color: var(--copyColor1);
+  font-size: 14px;
+  text-align: center;
+  letter-spacing: var(--letterSpacing);
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+.copy a {
+  color: var(--copyColor1);
+  text-decoration: underline dotted;
+  text-decoration-color: var(--copyColor2);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 6px;
+}
+
+.copy a:hover {
+  color: var(--copyColor1);
+  text-decoration-color: var(--copyColor3);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--color5);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color7);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color8);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: var(--color5);
+}
+
+@media (max-width: 600px) {
+  .header,
+  .todo-app {
+    max-width: 420px;
+  }
+
+  button {
+    padding: 16px 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .header,
+  .todo-app {
+    max-width: 320px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .header,
+  .todo-app {
+    max-width: 300px;
+  }
+
+  .copy {
+    padding: 8px 0;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .copy a {
+    text-underline-offset: 4px;
+  }
+
+  .copy2 {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .header,
+  .todo-app {
+    max-width: 280px;
+    padding: 16px;
+  }
+}
+
+/* Resources -- icons used
+<a target="_blank" href="https://icons8.com/icon/25534/checked-checkbox">Checked Checkbox</a>icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+<a target="_blank" href="https://icons8.com/icon/19336/unchecked-checkbox">Unchecked Checkbox</a>icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+*/
